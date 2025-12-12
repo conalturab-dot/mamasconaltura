@@ -1,0 +1,325 @@
+/* =========================================
+   1. VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================= */
+:root {
+    /* Paleta Oficial Mamás Con Altura */
+    --mamas-orange: #e87701;
+    --mamas-orange-hover: #c06200;
+    --mamas-blue: #1E5DBA;
+    --mamas-blue-light: #51b3d6;
+    --mamas-yellow: #FBB846;
+    --mamas-red: #dc3545;
+    
+    /* Fondos y Textos */
+    --bg-body: #f9fafb;
+    --text-main: #333333;
+    --text-muted: #6c757d;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Helvetica, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    padding-top: 80px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. BOOTSTRAP OVERRIDES
+   ========================================= */
+.navbar {
+    background-color: #fff !important;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #444 !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link.active, .nav-link:hover {
+    color: var(--mamas-orange) !important;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--mamas-orange);
+    border-color: var(--mamas-orange);
+}
+
+.btn-primary:hover, .btn-primary:active {
+    background-color: var(--mamas-orange-hover) !important;
+    border-color: var(--mamas-orange-hover) !important;
+}
+
+.btn-warning {
+    background-color: var(--mamas-yellow);
+    border-color: var(--mamas-yellow);
+    color: #333;
+    font-weight: 600;
+}
+
+/* Utilidades */
+.text-primary { color: var(--mamas-blue) !important; }
+.text-warning { color: var(--mamas-yellow) !important; }
+.hover-warning:hover { color: var(--mamas-orange) !important; transition: 0.3s; }
+.text-shadow { text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.ls-2 { letter-spacing: 2px; }
+.dashed-divider { border-top: 1px dashed #ccc; }
+
+/* Animaciones */
+.fade-in-up { animation: fadeInUp 0.8s ease-out; }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   3. COMPONENTES (Cards, Iconos)
+   ========================================= */
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+.border-start-orange { border-left: 5px solid var(--mamas-orange) !important; }
+.border-start-red { border-left: 5px solid var(--mamas-red) !important; }
+
+/* Icon Circles */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+.icon-circle:hover { transform: rotate(15deg) scale(1.1); }
+.bg-orange-light { background-color: #ffedd5; color: var(--mamas-orange); }
+.bg-blue-light { background-color: #eff6ff; color: var(--mamas-blue); }
+
+/* Iconos de Fondo (Quienes Somos) */
+.icon-bg-float {
+    position: absolute;
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none; /* Evita clics accidentales */
+}
+.icon-bg-heart { bottom: -20px; right: -20px; font-size: 10rem; }
+.icon-bg-star { top: -10px; right: -10px; font-size: 8rem; }
+.icon-bg-burger { font-size: 15rem; top: -50px; left: -50px; opacity: 0.25; color: white; }
+
+/* =========================================
+   4. ESTILOS POR PÁGINA
+   ========================================= */
+
+/* Delivery */
+.hero-delivery {
+    background: linear-gradient(135deg, var(--mamas-blue) 0%, var(--mamas-blue-light) 100%);
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+    border-radius: 0 0 50px 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.delivery-step-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: 100%;
+    border-top: 4px solid var(--mamas-orange);
+}
+
+.delivery-icon {
+    font-size: 2.5rem;
+    color: var(--mamas-orange);
+    background: #FFF4E6;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    transition: transform 0.2s;
+}
+.btn-whatsapp:hover { background-color: #20bd5a; color: white; transform: scale(1.05); }
+
+/* Novedades */
+.news-card {
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-img-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.news-card:hover .news-img-wrapper img { transform: scale(1.1); }
+
+.news-date-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--mamas-orange);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   5. CARRITO DE COMPRAS
+   ========================================= */
+.btn-cart-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cart {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 320px;
+    background-color: white;
+    z-index: 2000;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    border-top: 4px solid var(--mamas-orange);
+    margin-top: 15px;
+}
+
+.cart::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 15px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--mamas-orange);
+}
+
+@media (min-width: 992px) {
+    .btn-cart-container:hover .cart {
+        display: block;
+        animation: fadeInCart 0.3s forwards;
+    }
+    .cart::after {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent;
+    }
+}
+
+@media (max-width: 991px) {
+    .cart {
+        position: fixed;
+        top: 70px;
+        right: 5%;
+        left: 5%;
+        width: 90%;
+        max-width: 400px;
+    }
+    .cart.active {
+        display: block;
+        animation: fadeInCart 0.2s forwards;
+    }
+}
+
+.cart table img {
+    width: 60px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Alertas */
+.alerta-flotante {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 9999;
+    min-width: 300px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideInRight 0.5s ease-out;
+    border-left: 5px solid rgba(0,0,0,0.2);
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+/* ... (Mantén las variables anteriores) ... */
+:root {
+    /* ... otros colores ... */
+    --mamas-night: #1a2e4d; /* <--- TU COLOR ORIGINAL RESTAURADO */
+}
+
+/* ... (resto del CSS) ... */
+
+/* Agrega esto al final del archivo CSS */
+.bg-mamas-night {
+    background-color: var(--mamas-night) !important;
+    color: white !important;
+}
+/* ... (Todo tu CSS anterior) ... */
+
+/* --- Colores Personalizados Mamás Con Altura --- */
+
+/* El Azul Noche (Para el Footer y la tarjeta "Equipo") */
+.bg-mamas-night {
+    background-color: var(--mamas-night) !important;
+    color: white !important;
+}
+
+/* El Azul Corporativo (Para la tarjeta "Visión") */
+.bg-mamas-blue {
+    background-color: var(--mamas-blue) !important;
+    color: white !important;
+}
